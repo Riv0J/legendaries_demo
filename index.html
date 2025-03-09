@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+	<title>Legendaries</title>
+	
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Berkshire+Swash&family=Kings&family=Metal+Mania&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Kings&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/client.css">
+    <link rel="stylesheet" href="./css/deck.css">
+    <link rel="shortcut icon" href="./helm.webp" type="image/x-icon">
+</head>
+<body>
+	<header class="gradient-border">
+        <a class="link-brand" href="#">
+            <img src="./helm.webp" alt="Myths Logo">
+            <span>Legendaries</span>
+        </a>
+        <nav>
+            <a href="home">Home</a>
+            <a href="deck">Gallery</a>
+            <a href="seeder">Seeder</a>
+        </nav>
+    </header>
+<main>
+    <article class="main-article gradient-border">
+        <div id="banners-container" class="mx-16 d-sm-none">
+            <div class="banner">
+                <img src="./textures/b_1.webp" alt="">
+                <div class="banner-icon" style="background-image: url('./icons/lambda_gold.webp')"></div>
+            </div>
+            <div class="banner">
+                <img src="./textures/b_1.webp" alt="">
+                <div class="banner-icon" style="background-image: url('./icons/beast_gold.webp')"></div>
+            </div>
+            <div class="banner">
+                <img src="./textures/b_1.webp" alt="">
+                <div class="banner-icon" style="background-image: url('./icons/hand.webp')"></div>
+            </div>
+        </div>
+        <h1 class="px-16 pb-1">Gallery</h1>
+    </article>
+    <div id="cards"></div>
+    <div id="main-background"></div>
+</main>
+<style>
+    @keyframes hg{
+        0%{
+            left: 5%;
+            opacity: 0.45;
+        }
+        50%{
+            opacity: 0.35;
+        }
+        100%{
+            opacity: 0.45;
+            left: 70%;
+        }
+    }
+    #banners-container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-flex;
+        gap: 2rem;
+    }
+    .banner{
+        position: relative;
+        transform: translateY(-8%);
+        width: 6rem;
+        height: min-content;
+        transition: all 0.2s;
+        perspective: 100px;
+        cursor: pointer;
+        z-index: 1000;
+        isolation: isolate;
+    }
+    .banner::after{
+        content: '';
+        position: absolute;
+        inset: 5%;
+        top: 2%;
+        width: 25%;
+        height: 80%;
+        background: rgb(255,255,255);
+        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0) 100%);
+        clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0% 75%, 0 0);
+        animation: hg 6s infinite alternate-reverse;
+    }
+    .banner-icon{
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        aspect-ratio: 1;
+        transition: all 0.2s;
+        border-radius: 50%;
+        background-size: contain;
+        background-position: center;
+    }
+    .banner-icon::before{
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+        scale: 0;
+        transition: all 0.25s;
+    }
+    .banner:hover .banner-icon::before{
+        scale: 1.2;
+    }
+</style>
+<template id="card_template">
+    <div class="card %card-worn-number% %card-type% %card-period%">
+        <div class="card-background"></div>
+        <div class="card-markings"></div>
+        <div class="card-content">
+            <div class="card-img" style="background-image:url('%card-background%')">
+                <span class="card-name %card-name-size%">%card-name%</span>
+                <div class="card-name-banner"></div> 
+            </div>
+            <p class="card-description">%card-description%</p>
+        </div>
+    </div>
+</template>
+<script src="./js/cards.js"></script>
+<script>
+    const creatures = [
+        { name: "Kraken", title: "Enormous deep sea monster", myth: 1, category: "beast", period: "ancient", img: "./creatures/kraken_4.jpg" },
+        { name: "Cerberus", title: "Guardian of the underworld", myth: 1, category: "beast", period: "ancient", img: "./creatures/cerberus.webp" },
+        { name: "Achilles", title: "The invincible warrior", myth: 1, category: "human", period: "ancient", img: "./creatures/achilles.webp" },
+        { name: "Napoleon Bonaparte", title: "The Emperor of France", myth: 0, category: "human", period: "modern", img: "./creatures/nap.webp" },
+        { name: "Megalodon", title: "Terror of the ancient oceans", myth: 0, category: "beast", period: "ancient", img: "./creatures/megalodon_2.webp" },
+        { name: "Alexander the Great", title: "The unstoppable conqueror", myth: 0, category: "human", period: "ancient", img: "./creatures/alex_2.jpg" },
+        { name: "Thylacine", title: "The striped marsupial predator", myth: 0, category: "beast", period: "modern", img: "./creatures/thylacine.jpg" },
+        { name: "Argentavis", title: "Colossal bird of prey", myth: 0, category: "beast", period: "ancient", img: "./creatures/argentavis.webp" },
+        { name: "Nessie", title: "Loch Ness' Monster", myth: 1, category: "beast", period: "modern", img: "./creatures/nessie_2.webp" },
+        { name: "Roc", title: "Colossal bird of prey", myth: 1, category: "beast", period: "ancient", img: "./creatures/roc.webp" },
+        { name: "Joan of Arc", title: "The Flame of Freedom", myth: 0, category: "human", period: "modern", img: "./creatures/jeanne.webp" },
+        { name: "King Arthur", title: "The Sword of Justice", myth: 1, category: "human", period: "ancient", img: "./creatures/arthur_3.jpg" },
+        { name: "El Cid", title: "The Champion of Castile", myth: 0, category: "human", period: "modern", img: "./creatures/cid_4.webp" },
+
+        { name: "Homer", title: "The Epic Poet", myth: 1, category: "human", period: "ancient", img: "./creatures/homer.webp" },
+        { name: "Vlad the Impaler", title: "The Dracul of Wallachia", myth: 0, category: "human", period: "modern", img: "./creatures/vlad.webp" },
+        { name: "Gilgamesh", title: "The Hero-King of Uruk", myth: 1, category: "human", period: "ancient", img: "./creatures/gilgamesh.webp" },
+        { name: "Buddha", title: "The Enlightened One", myth: 1, category: "human", period: "ancient", img: "./creatures/buddha.webp" },
+        { name: "Fenrir", title: "The Doom of the Gods", myth: 1, category: "beast", period: "ancient", img: "./creatures/fenrir.webp" },
+        { name: "Mahatma Gandhi", title: "The Father of the Nation", myth: 0, category: "human", period: "modern", img: "./creatures/gandhi.webp" }
+    ];
+
+    document.addEventListener('DOMContentLoaded', create_cards);
+</script>
+	
+</body>
+</html>
