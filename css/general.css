@@ -70,7 +70,7 @@ header{
     background: rgb(31,31,31);
     background: linear-gradient(90deg, rgba(31,31,31,1) 0%, rgba(0,0,0,1) 50%, rgba(24,24,24,1) 100%);
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     header{
         flex-direction: column;
         justify-content: center;
@@ -159,6 +159,7 @@ h1{
     left: 0;
     display: inline-flex;
     gap: 2rem;
+    margin-inline: 4rem;
 }
 .banner{
     position: relative;
@@ -170,6 +171,28 @@ h1{
     cursor: pointer;
     z-index: 1000;
     isolation: isolate;
+}
+@media (max-width: 1000px){
+    .main-article h1{
+        text-align: start;
+    }
+    #banners-container{
+        right: 0;
+        left: unset;
+        gap: 1rem;
+        margin-inline: 2rem;
+    }
+    .banner{
+        width: 5rem;
+    }
+}
+@media (max-width: 500px){
+    .banner{
+        width: 2.5rem;
+    }
+    #anchor-home{
+        display: none;
+    }
 }
 .banner::after{
     content: '';
