@@ -1,0 +1,25 @@
+/* #cards{
+    position: relative;
+}
+.card{
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    transform: translate(-50%, 10%);
+} */
+
+#cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-inline: 3rem;
+    padding: 1rem;
+    padding-top: 2rem;
+}
+
+@media screen and (max-width: 660px) {
+    #cards{
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
