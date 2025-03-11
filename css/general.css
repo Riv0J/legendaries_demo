@@ -63,6 +63,7 @@ header{
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    width: -webkit-fill-available;
     padding-inline: 1rem;
     padding-block: 0.5rem;
     flex-wrap: wrap;
@@ -134,9 +135,12 @@ h1{
     letter-spacing: 0.1rem;
     font-family: 'Berkshire Swash';
     font-size: 1.65rem;
+    font-weight: 400;
     margin: 0;
     position: relative;
     z-index: 999;
+    padding-inline: 2rem;
+    padding-block: 0.5rem;
 }
 
 /* BANNERS */
@@ -171,6 +175,10 @@ h1{
     cursor: pointer;
     z-index: 1000;
     isolation: isolate;
+}
+.banner img{
+    aspect-ratio: auto;
+    width: 100%;
 }
 @media screen and (max-width: 1000px){
     .main-article h1{
