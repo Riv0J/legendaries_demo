@@ -48,8 +48,82 @@
         <h1>Gallery</h1>
     </article>
     <div id="cards"></div>
-    <div id="main-background"></div>
 </main>
+<footer class="gradient-border-top">
+    <div>
+        <a class="link-brand" href="#">
+            <img src="./helm.webp" alt="Myths Logo">
+            <span>Legendaries</span>
+        </a>
+    </div>
+    <div class="footer-section">
+        <span class="footer-title">Sections</span>
+        <nav>
+            <a href="home">Home</a>
+            <a href="index.html">Gallery</a>
+            <a href="#">Quiz</a>
+        </nav>
+    </div>
+    <nav class="footer-section">
+        <a href="" id="madeby">Made by Rovani</a>
+        <a href="">
+            <img src="./icons/github.webp" alt="github" class="icon">
+            Github Repo
+        </a>
+        <span>
+            This site does not use any cookies.
+        </span>
+    </nav>
+</footer>
+<div id="main-background"></div>
+<style>
+    .icon{
+        width: 1.5rem;
+        aspect-ratio: 1;
+    }
+    footer{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        padding: 1rem;
+        text-align: center;
+    }
+    footer nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    footer nav a{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        width: max-content;
+    }
+    .footer-section{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .footer-section:last-of-type{
+        justify-content: flex-end;
+    }
+    .footer-title{
+        width: 100%;
+        font-size: 1.25rem;
+        font-family: "Almendra";
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid gray;
+    }
+    #madeby{
+        text-decoration: underline;
+    }
+    @media screen and (max-width: 600px){
+        *{
+            color: green !important;
+        }
+    }
+</style>
 <template id="card_template">
     <div class="card %card-worn-number% %card-type% %card-period%">
         <div class="card-background"></div>
@@ -63,13 +137,6 @@
         </div>
     </div>
 </template>
-<style>
-    @media screen and (max-width: 600px){
-        *{
-            color: green !important;
-        }
-    }
-</style>
 <script src="./js/cards.js"></script>
 <script>
     const creatures = [
