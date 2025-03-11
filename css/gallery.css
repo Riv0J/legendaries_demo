@@ -18,8 +18,31 @@
     padding-top: 2rem;
 }
 
-@media screen and (max-width: 660px) {
+.card-description{
+    height: unset !important;
+}
+@media screen and (max-width: 800px) {
     #cards{
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .card-description{
+        margin: 0;
+        padding: 0;
+    }
+    html{
+        /* font-size: 75% !important; */
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    #cards{
+        grid-template-columns: repeat(5, 1fr) !important;
+        gap: 3%;
     }
 }

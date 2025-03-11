@@ -1,6 +1,9 @@
+function q(sel){
+    return document.querySelector(sel);
+}
 function create_cards() {
-    const container = document.querySelector('#cards')
-    const template = document.querySelector('#card_template')
+    const container = q('#cards')
+    const template = q('#card_template')
     
     
     creatures.forEach(creature => {
