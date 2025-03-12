@@ -2,18 +2,17 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
 	<title>Legendaries</title>
 	
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Berkshire+Swash&family=Kings&family=Metal+Mania&display=swap" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Kings&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/general.css">
     <link rel="stylesheet" href="./css/gallery.css">
+
     <link rel="shortcut icon" href="./helm.webp" type="image/x-icon">
 </head>
 <body>
@@ -76,78 +75,6 @@
     </nav>
 </footer>
 <div id="main-background"></div>
-<style>
-    .icon{
-        width: 1.5rem;
-        aspect-ratio: 1;
-    }
-    footer{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        padding: 1rem;
-        text-align: center;
-    }
-    footer nav{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-    footer nav a{
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
-        width: max-content;
-    }
-    .footer-section{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .footer-section:last-of-type{
-        justify-content: flex-end;
-    }
-    .footer-title{
-        width: 100%;
-        font-size: 1.25rem;
-        font-family: "Almendra";
-        padding-bottom: 0.5rem;
-        border-bottom: 1px solid gray;
-    }
-    #madeby{
-        text-decoration: underline;
-    }
-    @media (max-width: 600px) {
-        footer{
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-        footer>*{
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        footer>*::after{
-            content: '';
-            position: absolute;
-            inset: 0;
-            top: 100%;
-            width: 100%;
-            transform: scaleX(0.5);
-            height: 1rem;
-            border-bottom: 1px solid var(--color-font);
-        }
-        .footer-title{
-            border: 0;
-        }
-    }
-    @media screen and (max-width: 600px){
-        *{
-            color: green !important;
-        }
-    }
-</style>
 <template id="card_template">
     <div class="card %card-worn-number% %card-type% %card-period%">
         <div class="card-background"></div>
@@ -197,11 +124,10 @@
     q('#banner-human').addEventListener('click', function(){
         create_cards('human')
     });
-    
+
     q('#banner-beast').addEventListener('click', function(){
         create_cards('beast')
     });
 </script>
-	
 </body>
 </html>

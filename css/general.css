@@ -55,8 +55,6 @@ body{
 }
 
 header{
-    position: sticky;
-    top: 0;
     background-color: black;
     display: inline-flex;
     justify-content: space-between;
@@ -168,7 +166,7 @@ h1{
     transition: all 0.2s;
     perspective: 100px;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 1002;
     isolation: isolate;
 }
 .banner img{
@@ -240,6 +238,82 @@ h1{
 }
 .banner:hover .banner-icon::before{
     scale: 1.2;
+}
+/* FOOTER */
+.icon{
+    width: 1.5rem;
+    aspect-ratio: 1;
+}
+footer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 1rem;
+    text-align: center;
+}
+footer nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+footer nav a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: max-content;
+}
+.footer-section{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.footer-section:last-of-type{
+    justify-content: flex-end;
+}
+.footer-title{
+    position: relative;
+    width: 100%;
+    font-size: 1.25rem;
+    font-family: "Almendra";
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+.footer-title::after{
+    position: absolute;
+    content: '';
+    inset: 0;
+    top: 100%;
+    transform: scaleX(0.5);
+    height: 0.5rem;
+    border-bottom: 1px solid var(--color-font);
+}
+#madeby{
+    text-decoration: underline;
+}
+@media (max-width: 600px) {
+    footer{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    footer>*{
+        position: relative;
+        padding-bottom: 0.5rem;
+    }
+    footer>*::after{
+        content: '';
+        position: absolute;
+        inset: 0;
+        top: 100%;
+        width: 100%;
+        transform: scaleX(0.5);
+        height: 1rem;
+        border-bottom: 1px solid var(--color-font);
+    }
+    .footer-title{
+        display: none;    
+    }
 }
 
 /* CARDS */
