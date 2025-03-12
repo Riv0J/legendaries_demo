@@ -189,7 +189,7 @@ h1{
     }
     #banners-container{
         right: 0;
-        left: unset;
+        left: auto;
         gap: 1rem;
         margin-inline: 2rem;
     }
