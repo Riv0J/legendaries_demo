@@ -26,7 +26,7 @@
             <a href="home" id="anchor-home">Home</a>
             <a href="index.html">Gallery</a>
             <a href="#">Quiz</a>
-            <a href="https://riv0j.github.io/legendaries_demo/" target="_blank">Repo</a>
+            <a href="https://github.com/Riv0J/legendaries_demo" target="_blank">Repo</a>
         </nav>
     </header>
 <main>
@@ -65,8 +65,8 @@
         </nav>
     </div>
     <nav class="footer-section">
-        <a href="" id="madeby">Made by Rovani</a>
-        <a href="">
+        <a href="https://github.com/Riv0J" id="madeby">Made by Rovani</a>
+        <a href="https://github.com/Riv0J/legendaries_demo" target="_blank">
             <img src="./icons/github.webp" alt="github" class="icon">
             Github Repo
         </a>
@@ -117,6 +117,30 @@
     }
     #madeby{
         text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+        footer{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        footer>*{
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        footer>*::after{
+            content: '';
+            position: absolute;
+            inset: 0;
+            top: 100%;
+            width: 100%;
+            transform: scaleX(0.5);
+            height: 1rem;
+            border-bottom: 1px solid var(--color-font);
+        }
+        .footer-title{
+            border: 0;
+        }
     }
     @media screen and (max-width: 600px){
         *{

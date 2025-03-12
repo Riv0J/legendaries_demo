@@ -196,14 +196,13 @@ h1{
     .banner{
         width: 5rem;
     }
-
+    #anchor-home{
+        display: none;
+    }
 }
 @media screen and (max-width: 500px){
     .banner{
-        width: 2.5rem;
-    }
-    #anchor-home{
-        display: none;
+        width: 4rem;
     }
 }
 .banner::after{
@@ -246,7 +245,7 @@ h1{
 /* CARDS */
 /* ------------------------ */
 .card{
-    aspect-ratio: 0.6;
+    /* aspect-ratio: 0.6; */
     position: relative;
     transition: all 0.25s;
     cursor: pointer;
@@ -403,10 +402,12 @@ h1{
     font-style: italic;
     border: 1rem solid transparent;
     text-align: center;
-    width: 90%;
+    width: 60%;
     z-index: 999;
     height: 3rem;
     line-height: 1.3;
+    margin: 0;
+    margin-bottom: 2rem;
 }
 .card-worn-1 .card-background::after{
     background-image: url('../textures/card_1.webp');
