@@ -32,15 +32,15 @@
 <main>
     <article class="main-article gradient-border">
         <div id="banners-container">
-            <div class="banner">
+            <div class="banner" id="banner-all">
                 <img src="./textures/b_1.webp" alt="">
                 <div class="banner-icon" style="background-image: url('./icons/lambda_gold.webp')"></div>
             </div>
-            <div class="banner">
+            <div class="banner" id="banner-beast">
                 <img src="./textures/b_1.webp" alt="">
                 <div class="banner-icon" style="background-image: url('./icons/beast_gold.webp')"></div>
             </div>
-            <div class="banner">
+            <div class="banner" id="banner-human">
                 <img src="./textures/b_1.webp" alt="">
                 <div class="banner-icon" style="background-image: url('./icons/hand_gold_rotate.webp')"></div>
             </div>
@@ -186,7 +186,21 @@
         { name: "Mahatma Gandhi", title: "The Father of the Nation", myth: 0, category: "human", period: "modern", img: "./creatures/gandhi.webp" }
     ];
 
-    document.addEventListener('DOMContentLoaded', create_cards);
+    document.addEventListener('DOMContentLoaded', function(){
+        create_cards();
+    });
+
+    q('#banner-all').addEventListener('click', function(){
+        create_cards();
+    });
+
+    q('#banner-human').addEventListener('click', function(){
+        create_cards('human')
+    });
+    
+    q('#banner-beast').addEventListener('click', function(){
+        create_cards('beast')
+    });
 </script>
 	
 </body>
