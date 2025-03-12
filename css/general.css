@@ -72,19 +72,6 @@ header, footer{
     background: rgb(31,31,31);
     background: linear-gradient(90deg, rgba(31,31,31,1) 0%, rgba(0,0,0,1) 50%, rgba(24,24,24,1) 100%);
 }
-@media screen and (max-width: 600px) {
-    header{
-        flex-direction: column;
-        justify-content: center;
-        padding-bottom: 1rem;
-    }
-    header .link-brand{
-        margin-bottom: 0.5rem;
-    }
-    h1{
-        text-align: center;
-    }
-}
 .gradient-border, .gradient-border-top{
     position: relative;
 }
@@ -189,6 +176,14 @@ h1{
     width: 100%;
 }
 @media screen and (max-width: 1000px){
+    header{
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 1rem;
+    }
+    header .link-brand{
+        margin-bottom: 0.5rem;
+    }
     .main-article h1{
         text-align: start;
     }
