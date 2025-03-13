@@ -522,7 +522,7 @@ footer nav a{
     justify-content: flex-start;
     align-items: stretch;
     padding-block: 20%;
-    padding-inline: 15%;
+    padding-inline: 12%;
     visibility: hidden;
     gap: 1rem;
 }
@@ -533,10 +533,12 @@ footer nav a{
 
 }
 .card-back-name {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 .card-back-myth{
     font-size: 1.3rem;
-
+}
+.card-back-description{
+    margin: 0;
 }

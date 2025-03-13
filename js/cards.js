@@ -22,9 +22,10 @@ function create_cards(category) {
             'card-difficulty': creature.difficulty,
             'card-name': creature.name,
             'card-title': creature.title,
+            'card-description': creature.description,
             'card-background': creature.img,
             'card-name-size': creature.name.length > 12 ? 'card-name-small' : 'card-name-normal',
-            'card-myth': creature.myth == true ? 'Mythological' : 'History',
+            'card-myth': creature.myth == true ? 'Myth' : 'History',
         };
 
         const card = document.createElement('div');
