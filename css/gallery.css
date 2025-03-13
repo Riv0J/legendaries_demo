@@ -27,7 +27,7 @@
 }
 
 @media screen and (max-width: 600px) {
-    .card-description{
+    .card-title{
         width: 80%;
         font-size: 1rem;
     }
@@ -37,7 +37,7 @@
     #cards{
         grid-template-columns: repeat(1, 1fr);
     }
-    .card-description{
+    .card-title{
         font-size: 1.25rem;
     }
 }
@@ -51,15 +51,15 @@
 
 .card {
     opacity: 0;
-    transition: transform 0.25s ease-in-out, opacity 0.5s ease-out;
-    transform: translateY(-5%);
+    transition: translate 0.25s ease-in-out, scale 0.2s ease-in-out, opacity 0.5s ease-out;
+    translate: 0 -5%;
 }
 
 .card.visible {
     opacity: 1;
-    transform: translateY(0);
+    translate: 0;
 }
 
 .card:hover {
-    transform: translateY(-3%);
+    translate: 0 -5%;
 }

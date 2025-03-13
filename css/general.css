@@ -337,7 +337,17 @@ footer nav a{
     scale: 0.85;
     filter: blur(50%);
     border-radius: 0.5rem;
-    clip-path: polygon(0% 15%, 25% 15%, 25% 0%, 100% 0, 100% 85%, 75% 85%, 75% 100%, 0 100%);
+    clip-path: polygon(0% 15%, 25% 15%, 25% 0%, 100% 0, 100% 75%, 75% 85%, 75% 100%, 0 100%); /* clippy */
+}
+.card-back-markings{
+    position: absolute;
+    inset: 0;
+    top: -4%;
+    bottom: -4%;
+    border: 2px solid rgb(45, 45, 45);
+    scale: 0.85;
+    filter: blur(50%);
+    border-radius: 0.5rem;
 }
 .card-background{
     position: absolute;
@@ -365,15 +375,33 @@ footer nav a{
     border-radius: 1rem;
 }
 .card-markings{
+    filter: blur(0.03rem);
     position: absolute;
     inset: 0;
     z-index: 999;
 }
-.card-markings::before, .card-markings::after{
+.card-markings-bottom{
+    width: 15%;
+    position: absolute;
+    bottom: 4%;
+    right: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.card-markings-bottom img{
+    width: 100%;
+}
+.card-markings-difficulty{
+    color: black;
+    font-family: "Kings";
+    font-size: 2rem;
+}
+.card-markings::before{
     content: '';
     position: absolute;
     width: 15%;
-    filter: blur(0.02rem);
 
     aspect-ratio: 1;
     background-repeat: no-repeat;
@@ -390,19 +418,6 @@ footer nav a{
 .card-human .card-markings::before{
     background-image: url('../icons/hand.webp');
     transform: skew(-5deg) rotate(-25deg);
-}
-.card-ancient .card-markings::after{
-    bottom: 4%;
-    right: 5%;
-    transform: skew(-5deg) rotate(-15deg);
-    background-image: url('../icons/torch.webp');
-}
-.card-modern .card-markings::after{
-    bottom: 4%;
-    right: 5%;
-    filter: blur(0.03rem);
-    transform: skew(-5deg) rotate(15deg);
-    background-image: url('../icons/scroll.webp');
 }
 .card-content{
     width: 100%;
@@ -469,7 +484,7 @@ footer nav a{
     z-index: 0;
     transform: translate(0, 1rem);
 }
-.card-description{
+.card-title{
     color: black;
     font-family: "Berkshire";
     font-size: 1rem;
@@ -494,4 +509,34 @@ footer nav a{
 }
 .card-worn-4 .card-background::after{
     background-image: url('../textures/card_4.webp'); 
+}
+.card-worn-4 .card-background::after{
+    background-image: url('../textures/card_5.webp'); 
+}
+.card-back{
+    position: absolute;
+    inset: 0;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding-block: 20%;
+    padding-inline: 15%;
+    visibility: hidden;
+    gap: 1rem;
+}
+.card-back > * {
+    color: black;
+    font-family: "Almendra";
+    text-align: center;
+
+}
+.card-back-name {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+.card-back-myth{
+    font-size: 1.3rem;
+
 }

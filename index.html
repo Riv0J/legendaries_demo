@@ -78,40 +78,52 @@
 <template id="card_template">
     <div class="card %card-worn-number% %card-type% %card-period%">
         <div class="card-background"></div>
-        <div class="card-markings"></div>
+        <div class="card-markings">
+            <div class="card-markings-bottom">
+                <div class="card-markings-difficulty">%card-difficulty%</div>
+                <img src="./icons/fire.webp" alt="difficulty">
+            </div>
+        </div>
         <div class="card-content">
             <div class="card-img" style="background-image:url('%card-background%')">
                 <span class="card-name %card-name-size%">%card-name%</span>
                 <div class="card-name-banner"></div> 
             </div>
-            <p class="card-description">%card-description%</p>
+            <p class="card-title">%card-title%</p>
+        </div>
+        <div class="card-back">
+            <span class="card-back-name">%card-name%</span>
+            <span class="card-back-myth">%card-myth%</span>
+            <p class="card-back-description">%card-description%</p>
+            <div class="card-back-markings"></div>
         </div>
     </div>
 </template>
 <script src="./js/cards.js"></script>
 <script>
     const creatures = [
-        { name: "Kraken", title: "Enormous deep sea monster", myth: 1, category: "beast", period: "ancient", img: "./creatures/kraken_4.jpg" },
-        { name: "Cerberus", title: "Guardian of the underworld", myth: 1, category: "beast", period: "ancient", img: "./creatures/cerberus.webp" },
-        { name: "Achilles", title: "The invincible warrior", myth: 1, category: "human", period: "ancient", img: "./creatures/achilles.webp" },
-        { name: "Napoleon Bonaparte", title: "The Emperor of France", myth: 0, category: "human", period: "modern", img: "./creatures/nap.webp" },
-        { name: "Megalodon", title: "Terror of the ancient oceans", myth: 0, category: "beast", period: "ancient", img: "./creatures/megalodon_2.webp" },
-        { name: "Alexander the Great", title: "The unstoppable conqueror", myth: 0, category: "human", period: "ancient", img: "./creatures/alex_2.jpg" },
-        { name: "Thylacine", title: "The striped marsupial predator", myth: 0, category: "beast", period: "modern", img: "./creatures/thylacine.jpg" },
-        { name: "Argentavis", title: "Colossal bird of prey", myth: 0, category: "beast", period: "ancient", img: "./creatures/argentavis.webp" },
-        { name: "Nessie", title: "Loch Ness' Monster", myth: 1, category: "beast", period: "modern", img: "./creatures/nessie_2.webp" },
-        { name: "Roc", title: "Colossal bird of prey", myth: 1, category: "beast", period: "ancient", img: "./creatures/roc.webp" },
-        { name: "Joan of Arc", title: "The Flame of Freedom", myth: 0, category: "human", period: "modern", img: "./creatures/jeanne.webp" },
-        { name: "King Arthur", title: "The Sword of Justice", myth: 1, category: "human", period: "ancient", img: "./creatures/arthur_3.jpg" },
-        { name: "El Cid", title: "The Champion of Castile", myth: 0, category: "human", period: "modern", img: "./creatures/cid_4.webp" },
-
-        { name: "Homer", title: "The Epic Poet", myth: 1, category: "human", period: "ancient", img: "./creatures/homer.webp" },
-        { name: "Vlad the Impaler", title: "The Dracul of Wallachia", myth: 0, category: "human", period: "modern", img: "./creatures/vlad.webp" },
-        { name: "Gilgamesh", title: "The Hero-King of Uruk", myth: 1, category: "human", period: "ancient", img: "./creatures/gilgamesh.webp" },
-        { name: "Buddha", title: "The Enlightened One", myth: 1, category: "human", period: "ancient", img: "./creatures/buddha.webp" },
-        { name: "Fenrir", title: "The Doom of the Gods", myth: 1, category: "beast", period: "ancient", img: "./creatures/fenrir.webp" },
-        { name: "Mahatma Gandhi", title: "The Father of the Nation", myth: 0, category: "human", period: "modern", img: "./creatures/gandhi.webp" }
+        { name: "Kraken", title: "Enormous deep sea monster", myth: 1, category: "beast", period: "ancient", img: "./creatures/kraken_4.jpg", difficulty: 2 },
+        { name: "Cerberus", title: "Guardian of the underworld", myth: 1, category: "beast", period: "ancient", img: "./creatures/cerberus.webp", difficulty: 1 },
+        { name: "Achilles", title: "The invincible warrior", myth: 1, category: "human", period: "ancient", img: "./creatures/achilles.webp", difficulty: 2 },
+        { name: "Napoleon Bonaparte", title: "The Emperor of France", myth: 0, category: "human", period: "modern", img: "./creatures/nap.webp", difficulty: 1 },
+        { name: "Megalodon", title: "Terror of the ancient oceans", myth: 0, category: "beast", period: "ancient", img: "./creatures/megalodon_2.webp", difficulty: 3 },
+        { name: "Alexander the Great", title: "The unstoppable conqueror", myth: 0, category: "human", period: "ancient", img: "./creatures/alex_2.jpg", difficulty: 1 },
+        { name: "Thylacine", title: "The striped marsupial predator", myth: 0, category: "beast", period: "modern", img: "./creatures/thylacine.jpg", difficulty: 4 },
+        { name: "Argentavis", title: "Colossal bird of prey", myth: 0, category: "beast", period: "ancient", img: "./creatures/argentavis.webp", difficulty: 4 },
+        { name: "Nessie", title: "Loch Ness' Monster", myth: 1, category: "beast", period: "modern", img: "./creatures/nessie_2.webp", difficulty: 3 },
+        { name: "Roc", title: "Colossal bird of prey", myth: 1, category: "beast", period: "ancient", img: "./creatures/roc.webp", difficulty: 3 },
+        { name: "Joan of Arc", title: "The Flame of Freedom", myth: 0, category: "human", period: "modern", img: "./creatures/jeanne.webp", difficulty: 1 },
+        { name: "King Arthur", title: "The Sword of Justice", myth: 1, category: "human", period: "ancient", img: "./creatures/arthur_3.jpg", difficulty: 4 },
+        { name: "El Cid", title: "The Champion of Castile", myth: 0, category: "human", period: "modern", img: "./creatures/cid_4.webp", difficulty: 2 },
+        
+        { name: "Homer", title: "The Epic Poet", myth: 1, category: "human", period: "ancient", img: "./creatures/homer.webp", difficulty: 5 },
+        { name: "Vlad the Impaler", title: "The Dracul of Wallachia", myth: 0, category: "human", period: "modern", img: "./creatures/vlad.webp", difficulty: 3 },
+        { name: "Gilgamesh", title: "The Hero-King of Uruk", myth: 1, category: "human", period: "ancient", img: "./creatures/gilgamesh.webp", difficulty: 4 },
+        { name: "Buddha", title: "The Enlightened One", myth: 1, category: "human", period: "ancient", img: "./creatures/buddha.webp", difficulty: 5 },
+        { name: "Fenrir", title: "The Doom of the Gods", myth: 1, category: "beast", period: "ancient", img: "./creatures/fenrir.webp", difficulty: 1 },
+        { name: "Mahatma Gandhi", title: "The Father of the Nation", myth: 0, category: "human", period: "modern", img: "./creatures/gandhi.webp", difficulty: 1 }
     ];
+
 
     document.addEventListener('DOMContentLoaded', function(){
         create_cards();
