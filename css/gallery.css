@@ -19,11 +19,33 @@
     padding-top: 2rem;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1600px) {
+    *{
+        color: blue !important
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    *{
+        color: green !important
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    *{
+        color: red !important
+    }
     #cards{
         margin-inline: 0;
         grid-template-columns: repeat(2, 1fr);
     }
+    header nav a{
+        font-size: 1.2rem !important;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
 }
 
 @media screen and (max-width: 600px) {
