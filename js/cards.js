@@ -41,6 +41,12 @@ function create_cards(category) {
         delay += 100; // Aumenta el retraso para la siguiente carta
     });
 }
+function replacer(html, params){
+    Object.keys(params).forEach(key => {
+        html = html.replace(new RegExp('%' + key + '%', 'g'), params[key]);
+    });
+    return html;
+}
 
 document.addEventListener('click', event =>{
     const card = event.target.closest('.card');
@@ -96,12 +102,6 @@ document.addEventListener('click', event =>{
     }
     animator(card,params);
 });
-function replacer(html, params){
-    Object.keys(params).forEach(key => {
-        html = html.replace(new RegExp('%' + key + '%', 'g'), params[key]);
-    });
-    return html;
-}
 
 function animator(element, params){
     if(hasClass(element,"animating")){
